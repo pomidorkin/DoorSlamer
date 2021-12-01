@@ -5,6 +5,7 @@ using UnityEngine;
 public class Zombie : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 3f;
+    [SerializeField] int health = 100;
 
     // Update is called once per frame
     void Update()
@@ -17,6 +18,23 @@ public class Zombie : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag == "Door")
+        {
             Debug.Log("Collision with the door");
+            if (collision.gameObject.GetComponent<Door>())
+            {
+                health -= collision.gameObject.GetComponent<Door>().GetDoorDamage();
+                Debug.Log("My health: " + health);
+                if(health <= 0)
+                {
+                    DestroySelf();
+                }
+            }
+        }
+    }
+
+    private void DestroySelf()
+    {
+        Destroy(gameObject);
     }
 }

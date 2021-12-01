@@ -5,6 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     [SerializeField] GameObject doorPrefab;
+    [SerializeField] int doorDamage = 35;
     public Animator animator;
 
     void Start()
@@ -23,5 +24,10 @@ public class Door : MonoBehaviour
     public void OpenDoor()
     {
         animator.Play("DoorOpeningAnimation");
+    }
+
+    public int GetDoorDamage()
+    {
+        return doorDamage;
     }
 }
