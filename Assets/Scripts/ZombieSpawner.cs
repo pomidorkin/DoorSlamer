@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZombieSpawner : MonoBehaviour
 {
-    [SerializeField] Zombie zombiePrefab; // Should be a list of zombies
+    [SerializeField] GameObject zombiePrefab; // Should be a list of zombies
     bool spawn = true;
     [SerializeField] float minSpawnDelay = 1.0f;
     [SerializeField] float maxSpawnDelay = 5.0f;

@@ -11,15 +11,7 @@ public class Door : MonoBehaviour
     {
         var saveManager = SaveManager.Instance;
         SaveManager.Instance.Load();
-        SpawnDoor();
     }
-
-    private void SpawnDoor()
-    {
-        GameObject doorToCreate = Instantiate(doorPrefab, this.transform.position, Quaternion.identity);
-        doorToCreate.transform.parent = gameObject.transform;
-    }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))

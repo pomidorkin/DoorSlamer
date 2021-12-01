@@ -9,7 +9,14 @@ public class Zombie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(1, 0, 0) * (moveSpeed * Time.deltaTime));
+        transform.Translate(new Vector3(-1, 0, 0) * (moveSpeed * Time.deltaTime));
         transform.rotation = Quaternion.Euler(0, 0, 0);
+        /*transform.position = Vector3.MoveTowards(transform.position, new Vector3(-10, 0,0), moveSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.Euler(0, 0, 0);*/
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+            Debug.Log("Collision with the door");
     }
 }

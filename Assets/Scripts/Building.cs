@@ -7,6 +7,7 @@ public class Building : MonoBehaviour
     [SerializeField] GameObject cheapBuildingPrefab;
     [SerializeField] GameObject middleBuildingPrefab;
     [SerializeField] GameObject expensiveBuildingPrefab;
+    [SerializeField] GameObject doorPrefab;
     SaveManager saveManager;
     //[SerializeField] DoorController doorObject;
     void Start()
@@ -14,6 +15,12 @@ public class Building : MonoBehaviour
         saveManager = SaveManager.Instance;
         SaveManager.Instance.Load();
         SpawnBuilding(saveManager);
+        SpawnDoor();
+    }
+
+    private void SpawnDoor()
+    {
+        Instantiate(doorPrefab, this.transform.position, Quaternion.identity);
     }
 
     private void SpawnBuilding(SaveManager saveManager)
