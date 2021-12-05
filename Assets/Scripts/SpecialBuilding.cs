@@ -1,14 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class SpecialBuilding : Building
+public class SpecialBuilding : MonoBehaviour
 {
     [SerializeField] GameObject weaponPrefab; // Лист вякого мусора, который будет скидываться на зомби
+    [SerializeField] GameObject specialBuildingPrefab;
+    [SerializeField] GameObject doorPrefab;
+    [SerializeField] Button spawnSpecialButton;
+    SaveManager saveManager;
+    private bool spawned = false;
+
+    private void Start()
+    {
+        // Проверить куплен ли слот, если да, то делаем кнопку постройки здания видимойвидимой
+        saveManager = SaveManager.Instance;
+        SaveManager.Instance.Load();
+        //SpawnBuilding(saveManager);
+        ActivateButton(saveManager);
+        
+    }
+
+    private void SpawnDoor()
+    {
+        Instantiate(doorPrefab, this.transform.position, Quaternion.identity);
+    }
+
+    private void ActivateButton(SaveManager saveManager)
+    {
+        if (/*saveManager.State.speacialBuildigPurchased*/ true)
+        {
+            spawnSpecialButton.gameObject.SetActive(true);
+        }
+
+    }
+
+    public void SpawnBuilding()
+    {
+        Instantiate(specialBuildingPrefab, this.transform.position, Quaternion.identity);
+        SpawnDoor();
+        spawned = true;
+        spawnSpecialButton.interactable = false;
+        
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && spawned)
         {
             Attack();
         }

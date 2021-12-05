@@ -8,6 +8,8 @@ public class Building : MonoBehaviour
     [SerializeField] GameObject middleBuildingPrefab;
     [SerializeField] GameObject expensiveBuildingPrefab;
     [SerializeField] GameObject doorPrefab;
+    [SerializeField] int health = 100;
+    //private GameObject spawnedBuilding;
     SaveManager saveManager;
     //[SerializeField] DoorController doorObject;
     void Start()
@@ -37,5 +39,10 @@ public class Building : MonoBehaviour
         {
             Instantiate(middleBuildingPrefab, this.transform.position, Quaternion.identity);
         }
+    }
+
+    public void DecreaseHealth(int amount)
+    {
+        health -= amount;
     }
 }

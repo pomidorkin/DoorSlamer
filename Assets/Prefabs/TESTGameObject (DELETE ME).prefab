@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorPrefab: {fileID: 2254141328541107925}
+  doorDamage: 35
   animator: {fileID: 2254141328485961453}
 --- !u!54 &2435265818822039091
 Rigidbody:

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8099613565115551669}
   - component: {fileID: 3421356201509380968}
   - component: {fileID: 6772333798194187736}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 345151377494391562}
   - component: {fileID: 4935846651453302639}
   - component: {fileID: 70100955925570828}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ZombiePrefab
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
