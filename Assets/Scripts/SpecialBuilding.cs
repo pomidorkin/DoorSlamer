@@ -9,6 +9,8 @@ public class SpecialBuilding : MonoBehaviour
     [SerializeField] GameObject specialBuildingPrefab;
     [SerializeField] GameObject doorPrefab;
     [SerializeField] Button spawnSpecialButton;
+    [SerializeField] int energyPrice = 50;
+    [SerializeField] EnergyCounter energyCounter;
     SaveManager saveManager;
     private bool spawned = false;
 
@@ -38,10 +40,20 @@ public class SpecialBuilding : MonoBehaviour
 
     public void SpawnBuilding()
     {
-        Instantiate(specialBuildingPrefab, this.transform.position, Quaternion.identity);
-        SpawnDoor();
-        spawned = true;
-        spawnSpecialButton.interactable = false;
+        if (energyCounter.energy >= energyPrice)
+        {
+            energyCounter.energy -= energyPrice;
+            Instantiate(specialBuildingPrefab, this.transform.position, Quaternion.identity);
+            SpawnDoor();
+            spawned = true;
+            spawnSpecialButton.interactable = false;
+
+        }
+        else
+        {
+            // Not enough energy
+        }
+        
         
     }
 

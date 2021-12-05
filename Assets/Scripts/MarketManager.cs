@@ -17,6 +17,7 @@ public class MarketManager : MonoBehaviour
 
     // Pop Ups
     [SerializeField] GameObject marketMenu;
+    [SerializeField] GameObject upgradeMenu;
     [SerializeField] GameObject footer;
 
     // Buttons
@@ -52,6 +53,12 @@ public class MarketManager : MonoBehaviour
     public void OpenMarketMenu(bool isOpen)
     {
         marketMenu.gameObject.SetActive(isOpen);
+        footer.gameObject.SetActive(!isOpen);
+    }
+
+    public void OpenUpgradeMenu(bool isOpen)
+    {
+        upgradeMenu.gameObject.SetActive(isOpen);
         footer.gameObject.SetActive(!isOpen);
     }
 

@@ -8,6 +8,8 @@ public class Toilet : MonoBehaviour
     [SerializeField] GameObject toiletPrefab;
     [SerializeField] GameObject doorPrefab;
     [SerializeField] Button spawnToiletButton;
+    [SerializeField] int energyPrice = 50;
+    [SerializeField] EnergyCounter energyCounter;
     private bool spawned = false;
     // Start is called before the first frame update
     void Start()
@@ -28,10 +30,18 @@ public class Toilet : MonoBehaviour
 
     public void SpawnToilet()
     {
-        Instantiate(toiletPrefab, this.transform.position, Quaternion.identity);
-        SpawnDoor();
-        spawned = true;
-        spawnToiletButton.interactable = false;
+        if (energyCounter.energy >= energyPrice)
+        {
+            energyCounter.energy -= energyPrice;
+            Instantiate(toiletPrefab, this.transform.position, Quaternion.identity);
+            SpawnDoor();
+            spawned = true;
+            spawnToiletButton.interactable = false;
+        }
+        else
+        {
+            // Not enough energy
+        }
     }
 
     private void SpawnDoor()

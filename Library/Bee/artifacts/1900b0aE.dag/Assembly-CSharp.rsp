@@ -347,6 +347,7 @@
 "Assets/Scripts/AttackTrigger.cs"
 "Assets/Scripts/Building.cs"
 "Assets/Scripts/Door.cs"
+"Assets/Scripts/EnergyCounter.cs"
 "Assets/Scripts/Inventory.cs"
 "Assets/Scripts/MarketManager.cs"
 "Assets/Scripts/SaveManager.cs"

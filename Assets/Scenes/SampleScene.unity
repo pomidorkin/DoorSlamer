@@ -170,6 +170,8 @@ MonoBehaviour:
   toiletPrefab: {fileID: 4695803702830629144, guid: d77683404231bdb4d829c72213159524, type: 3}
   doorPrefab: {fileID: 2254141328485961443, guid: 4e3399dfc9d1de24eb3fca171e0e649a, type: 3}
   spawnToiletButton: {fileID: 250905726}
+  energyPrice: 50
+  energyCounter: {fileID: 273664216}
 --- !u!1 &28642684
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +575,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225903291}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -750,6 +752,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250905724}
   m_CullTransparentMesh: 1
+--- !u!1 &273664215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 273664217}
+  - component: {fileID: 273664216}
+  m_Layer: 0
+  m_Name: EnergyCounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &273664216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273664215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed1f64eef78d00143a8836a16cc28b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energy: 0
+--- !u!4 &273664217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273664215}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 222.4003, y: 178.6782, z: -1.6199687}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &282984665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,7 +1607,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577026474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7.86, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1736,6 +1783,8 @@ MonoBehaviour:
   specialBuildingPrefab: {fileID: 0}
   doorPrefab: {fileID: 0}
   spawnSpecialButton: {fileID: 0}
+  energyPrice: 50
+  energyCounter: {fileID: 0}
 --- !u!4 &1718492176
 Transform:
   m_ObjectHideFlags: 0
@@ -1985,3 +2034,5 @@ MonoBehaviour:
   specialBuildingPrefab: {fileID: 4695803702830629144, guid: d77683404231bdb4d829c72213159524, type: 3}
   doorPrefab: {fileID: 2254141328485961443, guid: 4e3399dfc9d1de24eb3fca171e0e649a, type: 3}
   spawnSpecialButton: {fileID: 1198817457}
+  energyPrice: 50
+  energyCounter: {fileID: 273664216}

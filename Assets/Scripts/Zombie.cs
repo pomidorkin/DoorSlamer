@@ -8,13 +8,22 @@ public class Zombie : MonoBehaviour
     [SerializeField] float moveSpeed = 3f;
     [SerializeField] int health = 100;
     [SerializeField] int damage = 15;
+    [SerializeField] int energyValue = 3;
+    [SerializeField] int minCoinValue = 1;
+    [SerializeField] int maxCoinValue = 5;
     private bool isAttacking = false;
     [SerializeField] float attackSpeed = 2.0f;
     private float attackCounter = 0;
+    SaveManager saveManager;
+
+    private EnergyCounter energyCounter;
 
     private void Start()
     {
+        saveManager = SaveManager.Instance;
+        SaveManager.Instance.Load();
         buildingSlot = FindObjectOfType<Building>();
+        energyCounter = FindObjectOfType<EnergyCounter>();
     }
 
     // Update is called once per frame
@@ -55,6 +64,9 @@ public class Zombie : MonoBehaviour
 
     private void DestroySelf()
     {
+        saveManager.State.coins += Random.Range(minCoinValue, maxCoinValue);
+        SaveManager.Instance.Save();
+        energyCounter.AddEnergy(energyValue);
         Destroy(gameObject);
     }
 
