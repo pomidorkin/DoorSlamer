@@ -40,9 +40,9 @@ public class SpecialBuilding : MonoBehaviour
 
     public void SpawnBuilding()
     {
-        if (energyCounter.energy >= energyPrice)
+        if (energyCounter.slider.value >= energyPrice)
         {
-            energyCounter.energy -= energyPrice;
+            energyCounter.slider.value -= energyPrice;
             Instantiate(specialBuildingPrefab, this.transform.position, Quaternion.identity);
             SpawnDoor();
             spawned = true;

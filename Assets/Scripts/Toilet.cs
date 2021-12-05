@@ -30,9 +30,9 @@ public class Toilet : MonoBehaviour
 
     public void SpawnToilet()
     {
-        if (energyCounter.energy >= energyPrice)
+        if (energyCounter.slider.value >= energyPrice)
         {
-            energyCounter.energy -= energyPrice;
+            energyCounter.slider.value -= energyPrice;
             Instantiate(toiletPrefab, this.transform.position, Quaternion.identity);
             SpawnDoor();
             spawned = true;
