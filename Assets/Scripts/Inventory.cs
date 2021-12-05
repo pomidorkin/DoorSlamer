@@ -5,8 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class Inventory
 {
-    public int coins { set; get; }
-    public int gems { set; get; }
+    public int coins = 100;
+    public int gems = 0;
 
     public bool middleBuildingPurchased { set; get; }
     public bool expensiveBuildingPurchased { set; get; }

@@ -29,7 +29,7 @@ public class SpecialBuilding : MonoBehaviour
 
     private void ActivateButton(SaveManager saveManager)
     {
-        if (/*saveManager.State.speacialBuildigPurchased*/ true)
+        if (saveManager.State.speacialBuildigPurchased)
         {
             spawnSpecialButton.gameObject.SetActive(true);
         }
